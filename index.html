@@ -1,0 +1,38 @@
+<script>
+var word=prompt("What is the word?(wild is a question mark)");
+word=word.toUpperCase();
+var n=word.length;
+var count=0;
+var valueW=0;
+scrabbleW(word);
+function scrabbleW(word){
+    while (n>count) {
+    if (word[count]==="D"||word[count]==="G"){
+        valueW=valueW+2;
+    }
+    else if (word[count]==="B"||word[count]==="C"||word[count]==="M"||word[count]==="P"){
+        valueW=valueW+3;
+    }
+    else if (word[count]==="F"||word[count]==="H"||word[count]==="V"||word[count]==="W"||word[count]==="Y"){
+        valueW=valueW+4;
+    }
+    else if (word[count]==="K"){
+        valueW=valueW+5;
+    }
+    else if (word[count]==="J"||word[count]==="X"){
+        valueW=valueW+8;
+    }
+    else if (word[count]==="Q"||word[count]==="Z"){
+        valueW=valueW+10;
+    }
+    else if (word[count]==="?"){
+        valueW=valueW;
+    }
+    else{
+        valueW=valueW+1
+    }
+count++;
+}
+alert(valueW +" Scrabble points");
+}
+</script>
